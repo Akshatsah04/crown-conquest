@@ -34,9 +34,9 @@ function Navbar() {
           <NavLink to="/dashboard" className={linkClassName}>
             Dashboard
           </NavLink>
-          <a href={rulesHref} className={staticLinkClassName}>
+          <Link to={rulesHref} className={staticLinkClassName}>
             Rule
-          </a>
+          </Link>
         </nav>
 
         <button
@@ -58,9 +58,9 @@ function Navbar() {
             <NavLink to="/dashboard" className={linkClassName} onClick={() => setIsOpen(false)}>
               Dashboard
             </NavLink>
-            <a href={rulesHref} className={staticLinkClassName} onClick={() => setIsOpen(false)}>
+            <Link to={rulesHref} className={staticLinkClassName} onClick={() => setIsOpen(false)}>
               Rule
-            </a>
+            </Link>
           </div>
         </div>
       )}
