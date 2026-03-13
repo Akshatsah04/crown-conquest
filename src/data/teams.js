@@ -117,4 +117,18 @@ export const teamsData = [
       { id: 901, name: 'Vritika Trivedi', status: 'active' },
     ],
   },
+  {
+    id: 10,
+    name: 'crypto',
+    totalHP: 100,
+    maxHP: 100,
+    jewels: 0,
+    icon: '🪙',
+    crownHolder: false,
+    players: [
+      { id: 1001, name: 'Ansh', status: 'active' },
+      { id: 1002, name: 'Madhav', status: 'active' },
+      { id: 1003, name: 'Rishab', status: 'active' },
+    ],
+  },
 ]
