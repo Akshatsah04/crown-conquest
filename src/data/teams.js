@@ -164,17 +164,17 @@ export const teamsData = [
     ],
   },
   {
-    id: 12,
+    id: 13,
     name: 'Team vivek',
     totalHP: 17,
     maxHP: 20,
     jewels: 2,
-    icon: '🐛',
+    icon: '👑',
     crownHolder: true,
     players: [
-      { id: 1201, name: 'arav', status: 'active' },
-      { id: 1202, name: 'vivek', status: 'active' },
-      { id: 1204, name: 'sumit', status: 'active' },
+      { id: 1301, name: 'arav', status: 'active' },
+      { id: 1302, name: 'vivek', status: 'active' },
+      { id: 1303, name: 'sumit', status: 'active' },
     ],
   },
 ]
