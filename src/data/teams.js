@@ -174,7 +174,7 @@ export const teamsData = [
     players: [
       { id: 1201, name: 'arav', status: 'active' },
       { id: 1202, name: 'vivek', status: 'active' },
-      { id: 1203, name: 'sumit', status: 'active' },
+      { id: 1204, name: 'sumit', status: 'active' },
     ],
   },
 ]
