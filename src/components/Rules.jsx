@@ -1,8 +1,8 @@
 const rules = [
-  'Each player has HP and contributes to the team total shown on the dashboard.',
-  'HP increases through puzzle success and decreases through battle penalties or failed challenges.',
-  'When a player reaches 0 HP, they are eliminated and return after 3 rounds.',
-  'Crown ownership changes the match pressure and should be defended as long as possible.',
+  'Each team has 20 HP at the start of Round 1 and the HP after each round is shown on the dashboard.',
+  'HP decreases through battle penalties or failed challenges and puzzles..',
+  'When a team reaches 0 HP, they are eliminated and return after 3 rounds.',
+  'After passing each round, the team earns a Jewel. Each team MUST acquire atleast 2 Jewels to be qualified to compete for the round.',
 ]
 
 function Rules() {

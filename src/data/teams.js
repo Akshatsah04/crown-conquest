@@ -1,7 +1,7 @@
 export const teamsData = [
   {
     id: 1,
-    name: 'Dhoomchuttad',
+    name: 'Team Dhoomchuttad',
     totalHP: 100,
     maxHP: 100,
     jewels: 0,
@@ -13,7 +13,7 @@ export const teamsData = [
   },
   {
     id: 2,
-    name: 'cheetah hi kehde',
+    name: 'Team cheetah hi kehde',
     totalHP: 100,
     maxHP: 100,
     jewels: 0,
@@ -27,7 +27,7 @@ export const teamsData = [
   },
   {
     id: 3,
-    name: 'Strangers',
+    name: 'Team Strangers',
     totalHP: 100,
     maxHP: 100,
     jewels: 0,
@@ -39,7 +39,7 @@ export const teamsData = [
   },
   {
     id: 4,
-    name: 'Gujiya',
+    name: 'Team Gujiya',
     totalHP: 100,
     maxHP: 100,
     jewels: 0,
@@ -52,7 +52,7 @@ export const teamsData = [
   },
   {
     id: 5,
-    name: 'Singham',
+    name: 'Team Singham',
     totalHP: 100,
     maxHP: 100,
     jewels: 0,
@@ -81,7 +81,7 @@ export const teamsData = [
   },
   {
     id: 7,
-    name: 'Hamza ali Mazari',
+    name: 'Team Hamza ali Mazari',
     totalHP: 100,
     maxHP: 100,
     jewels: 0,
@@ -94,7 +94,7 @@ export const teamsData = [
   },
   {
     id: 8,
-    name: 'Beyblade',
+    name: 'Team Beyblade',
     totalHP: 100,
     maxHP: 100,
     jewels: 0,
@@ -107,7 +107,7 @@ export const teamsData = [
   },
   {
     id: 9,
-    name: 'Rocker',
+    name: 'Team Rocker',
     totalHP: 100,
     maxHP: 100,
     jewels: 0,
@@ -119,7 +119,7 @@ export const teamsData = [
   },
   {
     id: 10,
-    name: 'crypto',
+    name: 'Team crypto',
     totalHP: 100,
     maxHP: 100,
     jewels: 0,
