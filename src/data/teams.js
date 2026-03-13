@@ -46,7 +46,7 @@ export const teamsData = [
     maxHP: 20,
     jewels: 2,
     icon: '🥟',
-    crownHolder: false,
+    crownHolder: true,
     players: [
       { id: 401, name: 'aksh', status: 'active' },
       { id: 402, name: 'meet', status: 'active' },
@@ -141,7 +141,7 @@ export const teamsData = [
     maxHP: 20,
     jewels: 4,
     icon: '💎',
-    crownHolder: true,
+    crownHolder: false,
     players: [
       { id: 1101, name: 'Raghav', status: 'active' },
       { id: 1102, name: 'kamaksh', status: 'active' },
