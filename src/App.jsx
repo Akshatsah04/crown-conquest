@@ -6,7 +6,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Landing />} />
-      <Route path="/home" element={<Landing skipIntro={true} />} />
+      <Route path="/home" element={<Landing />} />
       <Route path="/dashboard" element={<Dashboard />} />
     </Routes>
   )

@@ -1,131 +1,31 @@
 import { Link, useLocation } from 'react-router-dom'
-import { AnimatePresence, motion } from 'framer-motion'
-import { useMemo, useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
+import { useEffect } from 'react'
 import { GiCrownedHeart, GiSpikedDragonHead } from 'react-icons/gi'
 import Navbar from '../components/Navbar'
 import EventInfo from '../components/EventInfo'
 import Rules from '../components/Rules'
 import Footer from '../components/Footer'
 
-function Landing({ skipIntro = false }) {
-  const [hasEntered, setHasEntered] = useState(skipIntro)
+function Landing() {
   const location = useLocation()
 
   useEffect(() => {
-    if (skipIntro) {
-      setHasEntered(true)
-    }
-  }, [skipIntro])
-
-  useEffect(() => {
-    if (hasEntered && location.hash) {
+    if (location.hash) {
       const element = document.getElementById(location.hash.slice(1))
       if (element) {
         setTimeout(() => element.scrollIntoView({ behavior: 'smooth' }), 100)
       }
     }
-  }, [hasEntered, location.hash])
+  }, [location.hash])
 
-  const sigils = useMemo(
-    () =>
-      Array.from({ length: 16 }, (_, i) => ({
-        id: `sigil-${i}`,
-        size: 7 + (i % 5),
-        top: 8 + ((i * 11) % 82),
-        left: 5 + ((i * 13) % 90),
-        delay: (i % 6) * 0.55,
-        duration: 3.8 + (i % 4) * 0.9,
-      })),
-    [],
-  )
+
 
   return (
     <div className="min-h-screen">
-      <AnimatePresence>
-        {!hasEntered && (
-          <motion.section
-            key="crown-intro"
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0, transition: { duration: 0.55, ease: 'easeInOut' } }}
-            className="intro-stage fixed inset-0 z-50 overflow-hidden"
-          >
-            <div className="intro-halo intro-halo-1" />
-            <div className="intro-halo intro-halo-2" />
-            <div className="intro-grid" />
-            {sigils.map((sigil) => (
-              <span
-                key={sigil.id}
-                className="intro-sigil"
-                style={{
-                  top: `${sigil.top}%`,
-                  left: `${sigil.left}%`,
-                  width: `${sigil.size}px`,
-                  height: `${sigil.size}px`,
-                  animationDelay: `${sigil.delay}s`,
-                  animationDuration: `${sigil.duration}s`,
-                }}
-              />
-            ))}
+      <Navbar />
 
-            <motion.div
-              initial={{ y: 22, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.65, ease: 'easeOut' }}
-              className="section-shell relative flex min-h-screen items-center justify-center p-4"
-            >
-              <div className="intro-hero relative w-full max-w-6xl text-center">
-                <div className="intro-orbit mx-auto flex h-16 w-16 sm:h-20 sm:w-20 lg:h-24 lg:w-24 items-center justify-center rounded-full border border-[#D4AF37]/35 bg-[#D4AF37]/10 text-[#D4AF37]">
-                  <GiCrownedHeart className="crown-pulse text-3xl sm:text-4xl lg:text-5xl" />
-                </div>
-                <p className="mt-4 sm:mt-6 text-[0.6rem] sm:text-xs lg:text-sm uppercase tracking-[0.3em] sm:tracking-[0.42em] text-[#D4AF37]/80">
-                  The Arena Awakens
-                </p>
-                <h1 className="font-cinzel mt-4 text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[9.5rem] font-black uppercase leading-[0.92] tracking-[0.05em] sm:tracking-[0.1em] lg:tracking-[0.14em] text-white">
-                  <span className="block">Crown</span>
-                  <span className="block">Conquest</span>
-                </h1>
-                <p className="mx-auto mt-4 sm:mt-7 max-w-2xl text-sm sm:text-base lg:text-lg leading-relaxed sm:leading-8 text-slate-300">
-                  Enter the war room of empires. Claim the crown, monitor every strike, and witness strategy unfold in real time.
-                </p>
-                <div className="mx-auto mt-4 sm:mt-5 flex max-w-2xl flex-col sm:flex-row items-center justify-center gap-1 sm:gap-6 text-[0.6rem] sm:text-[0.72rem] uppercase tracking-[0.2em] sm:tracking-[0.28em] text-[#D4AF37]/78">
-                  <span>Royal Broadcast</span>
-                  <span className="hidden h-1 w-1 rounded-full bg-[#D4AF37]/65 sm:block" />
-                  <span className="text-slate-200/90">Live Spectator Feed</span>
-                  <span className="hidden h-1 w-1 rounded-full bg-[#D4AF37]/65 sm:block" />
-                  <span>Battle Protocol</span>
-                  <span className="hidden h-1 w-1 rounded-full bg-[#D4AF37]/65 sm:block" />
-                  <span className="text-slate-200/90 hidden sm:inline">Command Interface Ready</span>
-                </div>
-                <div className="mt-6 sm:mt-8 flex flex-wrap justify-center gap-2 sm:gap-3 text-[0.65rem] sm:text-xs lg:text-sm uppercase tracking-[0.15em] sm:tracking-[0.24em] text-slate-300/90">
-                  {['Crown Live', 'HP Telemetry', 'Battle Phases'].map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full border border-[#D4AF37]/25 bg-black/25 px-3 py-1.5 sm:px-4 sm:py-2"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-                <div className="mt-8 sm:mt-10 flex justify-center">
-                  <button
-                    type="button"
-                    onClick={() => setHasEntered(true)}
-                    className="rounded-full bg-[#D4AF37] px-6 sm:px-10 py-3 sm:py-4 text-sm sm:text-lg font-semibold text-[#0B0F1A] transition-transform duration-200 hover:scale-[1.03]"
-                  >
-                    Enter Crown Conquest
-                  </button>
-                </div>
-                <div className="intro-divider mx-auto mt-6 sm:mt-10 h-px w-full max-w-2xl" />
-                <div className="mt-4 text-[0.65rem] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.35em] text-slate-400">Press Enter To Begin</div>
-              </div>
-            </motion.div>
-          </motion.section>
-        )}
-      </AnimatePresence>
-
-      {hasEntered && <Navbar />}
-
-      <main className={hasEntered ? 'landing-open' : 'landing-locked'}>
+      <main>
         <section className="section-shell relative overflow-hidden py-16 sm:py-20 lg:py-28">
           <div className="absolute inset-x-0 top-0 -z-10 h-72 bg-[radial-gradient(circle,rgba(212,175,55,0.12),transparent_60%)] blur-3xl" />
           <GiSpikedDragonHead className="dragon-float absolute -right-8 top-10 -z-10 text-[16rem] sm:text-[20rem] lg:text-[24rem] text-white/5" />
