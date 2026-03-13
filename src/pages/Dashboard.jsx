@@ -46,7 +46,7 @@ function Dashboard() {
                     key={phase}
                     className={[
                       'rounded-full border px-4 py-2 text-sm font-medium',
-                      index === 0
+                      index === 2
                         ? 'border-[#D4AF37]/40 bg-[#D4AF37]/15 text-[#D4AF37]'
                         : 'border-white/10 bg-black/20 text-slate-300',
                     ].join(' ')}
